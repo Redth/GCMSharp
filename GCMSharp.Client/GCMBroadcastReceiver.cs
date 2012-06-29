@@ -13,6 +13,10 @@ using Android.Util;
 
 namespace GCMSharp.Client
 {
+	[BroadcastReceiver(Permission=GCMConstants.PERMISSION_GCM_INTENTS)]
+	[IntentFilter(new string[] { GCMConstants.INTENT_FROM_GCM_MESSAGE })]
+	[IntentFilter(new string[] { GCMConstants.INTENT_FROM_GCM_REGISTRATION_CALLBACK })]
+	[IntentFilter(new string[] { GCMConstants.INTENT_FROM_GCM_LIBRARY_RETRY })]
 	public class GCMBroadcastReceiver : BroadcastReceiver
 	{
 		const string TAG = "GCMBroadcastReceiver";

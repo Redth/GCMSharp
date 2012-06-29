@@ -125,7 +125,7 @@ namespace GCMSharp.Client
 			internalRegister(context, senderIds);
 		}
 
-		static void internalRegister(Context context, params string[] senderIds)
+		internal static void internalRegister(Context context, params string[] senderIds)
 		{
 			if (senderIds == null || senderIds.Length <= 0)
 				throw new ArgumentException("No senderIds");
@@ -150,7 +150,7 @@ namespace GCMSharp.Client
 			internalUnRegister(context);
 		}
 
-		static void internalUnRegister(Context context)
+		internal static void internalUnRegister(Context context)
 		{
 			Log.Verbose(TAG, "Unregistering app " + context.PackageName);
 			
